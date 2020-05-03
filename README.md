@@ -1,2 +1,6 @@
-# static-url-shortener
-A static URL Shortener that can be maintained and hosted on Github Pages or deployed to S3.
+# Static URL Shortener
+A lightweight static URL shortener that can be maintained and hosted on Github Pages or deployed to S3.
+
+## Installation
+
+`npm install`
