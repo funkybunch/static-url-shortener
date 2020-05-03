@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+.idea/
+404.html
