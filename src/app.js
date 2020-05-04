@@ -4,7 +4,7 @@ let passthrough = process.env.PASSTHROUGH;
 let slug = window.location.pathname;
 
 // Use console mode to prevent redirects during development.
-let consoleMode = true;
+let consoleMode = false;
 
 let redirected = false;
 
@@ -24,11 +24,12 @@ function goNow() {
 }
 
 for(let i = 0; i < redirects.length; i++) {
-    if(redirects[i].slug === slug || redirects[i].slug === slug  + "/") {
+    if(redirects[i].slug === slug || (redirects[i].slug + "/") === slug) {
         redirected = true;
         setDestination(redirects[i].destination);
         console.log("redirect: ", true);
-        console.log(slug);
+        console.log("url:", slug);
+        console.log("location:", redirects[i].destination);
         if(!consoleMode) {
             goNow();
         }
@@ -41,5 +42,7 @@ if(!redirected) {
         goNow();
     }
     console.log("redirect: ", "passthrough");
+    console.log("url:", slug);
+    console.log("location:", passthrough + slug);
     console.log(passthrough);
 }
